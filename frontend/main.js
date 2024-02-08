@@ -1,6 +1,4 @@
 $(document).ready(() => {
-
-    //Funcion para mostrar los datos de la API
     const list = () => {
         $.ajax({
             url: "http://localhost:8080/api/inventario/mostrarTodos",
@@ -78,11 +76,9 @@ $(document).ready(() => {
         });
     }
 
-// Llamar a la función deleteProducto para activar la funcionalidad de eliminación
     deleteProducto();
 
 
-//Metodo para rellenar los datos del producto en el formulario
 
     const rellenarProducto = () => {
         $(document).on('click', '.btn-editar', function () {
@@ -109,11 +105,9 @@ $(document).ready(() => {
         });
     }
 
-// Llamar a la función rellenarProducto para activar la funcionalidad de edición
     rellenarProducto();
 
 
-//Metodo para modificiar los datos de los alumnos
     const editAlumno = () => {
         $('#modificar').on('click', function () {
             let id = $('#id').val();
@@ -121,7 +115,7 @@ $(document).ready(() => {
             $('#modificar').css('display', 'block');
 
             const producto = {
-                id: id, // Asegúrate de incluir el ID en el cuerpo de la solicitud si es necesario
+                id: id,
                 nombre: $('#nombre').val(),
                 precio: $('#precio').val(),
                 cantidad: $('#cantidad').val(),
@@ -150,7 +144,7 @@ $(document).ready(() => {
     editAlumno();
 
 
-//Metodo para limpiar el formulario
+
     const reset = () => {
         $("#nombre").val("");
         $("#precio").val("");
@@ -159,7 +153,7 @@ $(document).ready(() => {
     }
 
 
-//LLAMADAS A FUNCIONES
+
     list();
     save();
 })
